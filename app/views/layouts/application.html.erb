@@ -9,13 +9,17 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <% if flash.notice %>
-      <p class="notice"><%= notice %></p>
-    <% end %>
-    <% if flash.alert%>
-      <p class="alert"><%= alert %></p>
-    <% end %>
-    <%= yield %>
-  </body>
+  <div class="container">
+    <div class="card card-container">
+      <body>
+        <% if flash.notice %>
+          <p class="notice"><%= notice %></p>
+        <% end %>
+        <% if flash.alert%>
+          <p class="alert"><%= alert %></p>
+        <% end %>
+        <%= yield %>
+      </body>
+    </div>
+  </div>  
 </html>
