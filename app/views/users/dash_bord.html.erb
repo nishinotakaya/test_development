@@ -1,5 +1,5 @@
 <h1>hello world</h1>
-
+<%= link_to '記事一覧', articles_path %>
 <% if user_signed_in? %>
   <p><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
 <% end %>

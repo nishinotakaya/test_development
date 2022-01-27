@@ -1,0 +1,7 @@
+<h1>記事一覧</h1>
+<%= link_to "新規登録", new_article_path %>
+<% @articles.map do |a| %>
+  <%= a.title %>
+  <%= a.content %>
+  <%= image_tag a.image.url %>
+<% end %>

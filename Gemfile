@@ -34,6 +34,8 @@ gem 'devise-i18n'
 gem 'bootstrap', '~> 5.0.0.alpha1'
 gem 'jquery-rails'
 gem 'rails-i18n'
+gem 'carrierwave'
+gem 'rmagick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
