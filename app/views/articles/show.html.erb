@@ -1,0 +1,24 @@
+<h1>記事詳細</h1>
+<div class= "container">
+  <p id="notice"><%= notice %></p>
+
+<table>
+  <div class="field">
+    <th><%= t("activerecord.attributes.article.title") %></th>
+    <td><%= @article.title %></td>
+  </div>
+
+  <div class="field">
+    <th><%= t("activerecord.attributes.article.content") %></th>
+    <td><%= @article.content %></td>
+  </div>
+
+  <div class="field">  
+    <th><%= t("activerecord.attributes.article.image") %></th>
+    <td><%= @article.image %></td>
+  </div>
+
+  <%= link_to '編集', article_path(@article) %> |
+  <%= link_to '戻る', articles_path %>
+</table>
+</div>

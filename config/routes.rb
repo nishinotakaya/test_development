@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'articles/new'
+  get 'articles/index'
+  get 'articles/show'
+  get 'article/new'
+  get 'article/index'
+  get 'article/show'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions',
@@ -19,4 +25,6 @@ end
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
+
+  resources :articles
 end
