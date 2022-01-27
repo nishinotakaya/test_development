@@ -1,16 +1,18 @@
-    <h2>パスワード認証メール</h2>
+<div class="card card-container">
+  <h2>パスワード認証メール</h2>
 
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-      <%= render "users/shared/error_messages", resource: resource %>
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= render "users/shared/error_messages", resource: resource %>
 
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
-      </div>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+    </div>
 
-      <div class="actions">
-        <br><%= f.submit "送信", class: "btn btn-lg btn-primary btn-block btn-signin" %>
-      </div>
-    <% end %>
+    <div class="actions">
+      <br><%= f.submit "送信", class: "btn btn-lg btn-primary btn-block btn-signin" %>
+    </div>
+  <% end %>
 
-    <%= render "users/shared/links" %>   
+  <%= render "users/shared/links" %>   
+</div>

@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :update, :destroy, :edit]
   before_action :authenticate_user!
-  
+  protect_from_forgery :except => [:destroy]
   #index->データの一覧の表示
   def index
     #articleのデータの全件取得
@@ -21,13 +21,6 @@ class ArticlesController < ApplicationController
     #formのデータを受け取る
     @article = current_user.articles.new(article_params)
     if @article.save
-      # if params[:article][:image]
-      #   File.binwrite("public/article_images/#{@article.id}.jpg", params[:article][:image].read)
-      #   @article.update(image_id: "#{@article.id}.jpg" )
-      # else
-      #   @article.update(image_id: "default.jpg" )
-      # end
-      # saveが完了したら、一覧ページへリダイレクト
       flash[:success] = '新規作成に成功しました。'
       redirect_to articles_url
     else
@@ -57,7 +50,7 @@ class ArticlesController < ApplicationController
   def destroy
     #データの削除
     @article.destroy
-    flash[:success] = "#{@article.name}のデータを削除しました。"
+    flash[:success] = "#{@article.title}のデータを削除しました。"
     #一覧ページへリダイレクト
     redirect_to articles_url
   end
@@ -73,6 +66,6 @@ class ArticlesController < ApplicationController
     #共通処理なので、before_actionで呼び出している
     def set_article
     #特定データの取得
-      @article = Article.find(params[:id])
+      @article = current_user.articles.find(params[:id])
     end
 end

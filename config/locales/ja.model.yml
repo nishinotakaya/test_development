@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    errors:
+    models: #ここから下のコードを追加
+      article: "記事"
+    attributes:
+      article:
+        title: "タイトル"
+        content: "内容"
+        image: 画像

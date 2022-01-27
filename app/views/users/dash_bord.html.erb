@@ -1,5 +1,8 @@
-<h1>hello world</h1>
-<%= link_to '記事一覧', articles_path %>
-<% if user_signed_in? %>
-  <p><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
-<% end %>
+<div class="card card-container">
+  <h1>hello world</h1>
+  <%= link_to '記事一覧', articles_path, class: "btn btn-lg btn-primary btn-block btn-signin" %>
+  <br> <%= link_to 'ユーザー編集', edit_user_registration_path(current_user), class: "btn btn-lg btn-primary btn-block btn-signin" %>
+  <% if user_signed_in? %>
+    <br><p><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-lg btn-primary btn-block btn-signin" %></p>
+  <% end %>
+</div>

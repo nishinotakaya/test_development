@@ -1,0 +1,21 @@
+<%= form_with(model: article, local: true, multipart: true) do |f| %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+
+    <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
+    <br><%= f.submit "登録", class: "btn btn-lg btn-primary btn-block btn-signin" %>
+  </div>
+<% end %>  
