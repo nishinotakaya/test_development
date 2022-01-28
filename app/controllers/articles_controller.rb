@@ -13,8 +13,8 @@ class ArticlesController < ApplicationController
   end
 
   def show
-  #before_actionでデータの取得は完了している
-  end
+    #before_actionでデータの取得は完了している
+  end  
 
   #create->新規データの登録
   def create

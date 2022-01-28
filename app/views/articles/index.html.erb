@@ -1,7 +1,7 @@
 <h1>記事一覧</h1>
 <%= link_to "新規登録", new_article_path %>
-<%= link_to 'ユーザー画面', users_dash_bord_path%>
-<table>
+<%= link_to 'ユーザー画面', users_dash_bord_path %>
+<table class="table table-light table-hover">
   <tr>
     <th>タイトル</th>
     <th>内容</th>
@@ -18,10 +18,12 @@
        <%= link_to a.image.url, "data-lightbox" => a.image.url do %>
          <%= image_tag a.image.url, height: '200', :style=>"width:100;" if a.image.url.present? %>
       <% end %>
-      </td>
-      <td><%= link_to "詳細", article_path(a) %></td>
+      </td>      
+      <%= render partial:"articles/photos", locals: {a: a} %>
       <td><%= link_to "編集", edit_article_path(a) %></td>
-      <td><%= button_to"削除", article_path(a), method: :delete %></td>
+      <td><%= button_to "削除", article_path(a), method: :delete %></td>
     </tr>
   <% end %>
 </table>
+<div id="articale" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
+<!-- Button trigger modal -->
